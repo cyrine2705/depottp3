@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { TableauComponent } from './tableau/tableau.component';
 import { EmployeComponent } from './employe/employe.component';
 import { NompersoPipe } from './nomperso.pipe';
+import { ListmaterielComponent } from './listmateriel/listmateriel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableauComponent,
     EmployeComponent,
-    NompersoPipe
+    NompersoPipe,
+    ListmaterielComponent
   ],
   imports: [
     BrowserModule
