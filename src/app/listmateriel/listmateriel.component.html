@@ -2,8 +2,9 @@
 
 </h1>
 <ul>
-    <li *ngFor="let t of materiels" ;>
+    <li *ngFor="let t of materiels ;index as indice" >
         <p>{{t.nom}}</p> 
-        <p>{{t.image}} reference :{{t.reference}} Prix : {{t.prix}} Etat {{t.etat}}</p>
+        <p><img [src]="t.image"> reference :{{t.reference}} Prix : {{t.prix}} Etat {{t.etat}}
+        <button *ngIf="t.etat=='endommagé'" (click)="onModifie(indice)">réparer </button></p>
     </li>
 </ul>

@@ -16,6 +16,11 @@ export class ListmaterielComponent implements OnInit {
     {nom:'Pc Portable', reference: 'hp58', image: 'assets/pcPortables.png',
    prix: 1512.8, etat:'réparé'}
     ];
+  onModifie(indice:number){
+    if (this.materiels[indice].etat=="endommagé")
+   { this.materiels[indice].etat="réparé";}
+
+  }
    
 
   constructor() { }
