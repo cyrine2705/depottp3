@@ -4,19 +4,22 @@ liste des produits informatiques
  
 <ul class="list-group">
     <ng-container *ngFor="let t of materiels ;index as indice" >
-        <li class="list-group-item " 
-        [ngClass]="{'list-group-item list-group-item-info':t.etat=='endommagé'}">
-        <p class="text-uppercase">{{t.nom}}</p> 
+        <li [ngClass]="{'list-group-item':true,
+        'list-group-item list-group-item-info':t.etat=='endommagé'}">
+        <p >{{t.nom |uppercase}}</p> 
         <p>
         <img [src]="t.image"> reference :{{t.reference}}
-        <span [ngClass]="{'badge rounded-pill bg-dark text-light':t.prix>200,'fas fa-coins':t.prix>200,
-            'badge rounded-pill bg-warning text-dark ':t.prix<200}"> 
+        <span [ngClass]="{'badge':true,
+        'rounded-pill':true,
+         'bg-dark ':t.prix>200,
+         'fas fa-coins':t.prix>200,
+        ' bg-warning ':t.prix<=200}"> 
             Prix : {{t.prix| currency :'TND':'symbol':'3.3':'fr'}}</span>
-         Etat {{t.etat}}
+            Etat {{t.etat}}
         <button class="btn btn-primary" *ngIf="t.etat=='endommagé'" (click)="onModifie(indice)">  réparer </button></p>
     </li>
 </ng-container>
      
-    
+
 </ul>
 

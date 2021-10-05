@@ -13,7 +13,7 @@ export class TableauComponent implements OnInit {
    console.log(t+" a pour position "+indice+"/"+compteur);
  }
  onPosition(indice:number){
-  console.log("a pour position "+ indice);
+  console.log(this.tab[indice]+" a pour position "+ (indice+1));
  }
 
  style:string ="italic";
@@ -31,7 +31,7 @@ export class TableauComponent implements OnInit {
    if(this.style=="normal")
    {this.style="italic";
   this.txt="Normal"; }
-   else if (this.style=="italic") 
+   else 
    { this.style="normal";
    this.txt="Italique";
   }
